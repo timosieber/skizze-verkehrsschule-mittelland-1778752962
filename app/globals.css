@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+    --font-display: "Anton", system-ui, sans-serif;
+    --font-body: "Inter", system-ui, sans-serif;
+    --font-mono: "IBM Plex Mono", Menlo, monospace;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #f5efe7;
+    color: #0a0a0a;
+    font-family: var(--font-body), system-ui, sans-serif;
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  ::selection {
+    background: #1E8FD4;
+    color: #f5efe7;
+  }
+}
+
+@layer components {
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(245, 239, 231, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(245, 239, 231, 0.06) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .container-padded {
+    @apply px-6 md:px-12 lg:px-20;
+  }
+
+  .display-hero {
+    font-family: var(--font-display), sans-serif;
+    font-weight: 700;
+    font-size: clamp(3rem, 8vw, 8.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+  }
+
+  .display-1 {
+    font-family: var(--font-display), sans-serif;
+    font-weight: 700;
+    font-size: clamp(2.5rem, 6vw, 6rem);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+  }
+
+  .display-2 {
+    font-family: var(--font-display), sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 4vw, 4rem);
+    line-height: 1.0;
+    letter-spacing: -0.015em;
+  }
+
+  .caption-mono {
+    font-family: var(--font-mono), monospace;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
